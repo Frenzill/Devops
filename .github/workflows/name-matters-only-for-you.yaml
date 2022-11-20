@@ -1,4 +1,4 @@
-name: 'test my project'z
+name: 'test my project'
 on: push
 jobs:
   step:
