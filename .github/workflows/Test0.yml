@@ -3,12 +3,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: little-core-labs/get-git-tag@v3.0.1
-        id: tagName
+      - id step1: 
+      - run: echo "test=hello" >> $GITHUB_OUTPUT
       - name: Some other step # Output usage example
-        with:
-          tagname: ${{ steps.tagName.outputs.tag }}
-      - name: Yet another step # Environment variabl usage example
-        run: |
-          Echo ${{ steps.tagName.outputs.tag }}
+      - run: Echo ${{ steps.tstep1.outputs.test }}
+        
