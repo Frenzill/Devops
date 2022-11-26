@@ -4,7 +4,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id step1: 
-      - run: echo "test=hello" >> $GITHUB_OUTPUT
-      - name: Some other step # Output usage example
-      - run: Echo ${{ steps.tstep1.outputs.test }}
+         run: echo "test=hello" >> $GITHUB_OUTPUT
+      - name: Some other step
+         run: Echo ${{ steps.tstep1.outputs.test }}
+        
+
         
