@@ -2,11 +2,10 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      output1: ${{ steps.step1.outputs.test }}
     steps:
       - id: step1 
-         run: echo "test=hello" >> $GITHUB_OUTPUT
+        run: echo "test=hello" >> $GITHUB_OUTPUT
       - name: Some other step
-         run: Echo ${{ steps.tstep1.outputs.test }}
-        
-
-        
+        run: Echo ${{ steps.step1.outputs.test }}
