@@ -1,7 +1,12 @@
-name: 'test my project'
 on: push
 jobs:
-  step:
-    runs-on: ubuntu-latest
- 
- 
+  build:
+   if-Windows-else 
+      runs-on: ubuntu-latest
+      steps:
+        - name: condition 1
+          if runner.os == 'Windows'
+          run: echo "Это винда"
+        - name: condition 2
+          if runner.os != 'Windows'
+          run:  echo "Это не  винда"
