@@ -1,12 +1,11 @@
 on: push
 jobs:
-  build:
-   if-Windows-else 
+   if-Windows-else:
       runs-on: ubuntu-latest
       steps:
         - name: condition 1
-          if runner.os == 'Windows'
-          run: echo "Это винда"
+          if: runner.os == 'Windows'
+          run: echo "Это $env:RUNNER_OS."
         - name: condition 2
-          if runner.os != 'Windows'
-          run:  echo "Это не  винда"
+          if: runner.os != 'Windows'
+          run:  echo "Это не  винда, а $env:RUNNER_OS."
